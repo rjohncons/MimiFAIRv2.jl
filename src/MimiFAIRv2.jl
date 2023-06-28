@@ -151,9 +151,9 @@ function get_model(;emissions_forcing_scenario::String="ssp585", start_year::Int
     # Add components to model
     # ---------------------------------------------
 
-    add_comp!(m, co2_cycle)
     add_comp!(m, ch4_cycle)
     add_comp!(m, n2o_cycle)
+    add_comp!(m, co2_cycle)
     add_comp!(m, montreal_cycles)
     add_comp!(m, flourinated_cycles)
     add_comp!(m, aerosol_plus_cycles)
