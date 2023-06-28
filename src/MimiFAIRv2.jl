@@ -339,7 +339,7 @@ function get_model(;emissions_forcing_scenario::String="ssp585", start_year::Int
     connect_param!(m, :temperature   	   => :F,                 :radiative_forcing   => :total_RF)
 
     # Return model.
-    return m
+    return m, emissions_data
 end
 
 end # module
