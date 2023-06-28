@@ -11,7 +11,8 @@
     q       = Parameter(index=[3])      # Radiative forcing coefficient: [1] Thermal equilibration of deep ocean & [2] Thermal admustment of upper ocean (K W⁻¹m²).
     F       = Parameter(index=[time])   # Total radiative forcing (Wm⁻²).
     ocean_heat_capacity = Parameter(index=[2], description="Heat capacities of Mixed and Deep Layers of the Ocean",
-							unit="W/(m^2 y)") # Heat capacities for mixed layer and deep ocean (W m⁻²yr⁻¹).
+				default=[8.2, 109.0],
+				unit="W/(m^2 y)") # Heat capacities for mixed layer and deep ocean (W m⁻²yr⁻¹).
     Tj_0    = Parameter(index=[3])
     T_0     = Parameter()
 
