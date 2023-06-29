@@ -286,7 +286,7 @@ function create_fair_monte_carlo(n_samples::Int;
         n2o = zeros(length(start_year:end_year), n_samples)           # Total atmospheric nitrous oxide concentrations (ppb).
 
         # Load an instance of FAIR with user-specificed settings.
-        fair_model = MimiFAIRv2.get_model(emissions_forcing_scenario=emissions_scenario, start_year=start_year, end_year=end_year)
+        fair_model = MimiFAIRv2.get_model(emissions_forcing_scenario=emissions_scenario, start_year=start_year, end_year=end_year)[1]
 
         # Create a model instance to speed things up.
         fair_instance = Mimi.build(fair_model)
