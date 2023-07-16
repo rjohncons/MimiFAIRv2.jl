@@ -44,8 +44,8 @@
             for j=1:3
                 v.Tj[t,j] = v.Tj[t-1,j] * p.decay_factor[j] + p.F[t] * p.q[j] * (1.0 - p.decay_factor[j])
             end
-			# TODO: Add calculation comments.
-			v.c_dtemp[t] = p.ocean_heat_capacity[1]*(sum(v.Tj[t,:])-sum(v.Tj[t-1,:])) + p.ocean_heat_capacity[2]*(sum(v.Tj[t,:])-sum(v.Tj[t-1,:]))
+			# RJ - add ohc calc using same parameter values as for v1.6.2 - assume mixed layers are FAIRv2 [1:2] and deep layer is FAIRv2 [3].
+			v.c_dtemp[t] = p.ocean_heat_capacity[1]*(sum(v.Tj[t,1:2])-sum(v.Tj[t-1,1:2])) + p.ocean_heat_capacity[2]*(sum(v.Tj[t,3])-sum(v.Tj[t-1,3]))
 			# TODO: Add calculation comments.
 			v.del_ohc[t]  = v.ntoa_joule * v.c_dtemp[t]	
 
